@@ -3,77 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073846">
+<meta name="theme-color" content="#082f40">
 <meta name="description" content="A new tide is coming. Discover newreef™ at newreefskin.com.">
 <title>Coming Soon | newreefskin.com</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
-:root{--deep:#062f3c;--sea:#0b5260;--foam:#eff9f4;--coral:#fa8d78;--sun:#ffd891;--mint:#a8dbc4}
+:root{--ink:#f4f8f2;--soft:#d7e9e1;--sea:#062c3a;--peach:#ffc29b}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--deep);color:var(--foam);font-family:"Manrope",sans-serif}
-.hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 48% 16%,#297d83 0%,#115967 34%,#083f4f 67%,#062f3c 100%)}
-.hero:before,.hero:after{content:"";position:absolute;inset:-10%;z-index:-1;pointer-events:none}
-.hero:before{opacity:.16;background:repeating-linear-gradient(108deg,transparent 0 10%,#b6e8d3 10.4%,transparent 15% 29%);filter:blur(24px);transform:translateX(-8%);animation:light 22s ease-in-out infinite alternate}
-.hero:after{inset:auto -5% -1px;height:29%;background:linear-gradient(180deg,transparent,#052c36 90%);z-index:1}
-nav{position:absolute;z-index:5;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:27px clamp(22px,6vw,84px)}
-.wordmark{font-size:1.1rem;letter-spacing:.16em;text-transform:lowercase;font-weight:700;color:#f2fbf5;text-decoration:none}
-.nav-note{font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;color:#c5e5d8}
-.content{position:relative;z-index:3;width:min(780px,90vw);text-align:center;margin:0 auto;padding:clamp(146px,20vh,210px) 0 220px;animation:content-float 7s ease-in-out infinite}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#c4e8d9;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase}
-.eyebrow:before,.eyebrow:after{content:"";width:25px;height:1px;background:#a8dbc4}
-h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(3.5rem,10vw,7.2rem);line-height:.95;letter-spacing:-.045em;margin:26px 0 22px;text-shadow:0 5px 32px #092e3c55}
-h1 em{font-style:normal;color:var(--sun)}
-.intro{max-width:510px;margin:0 auto;color:#d4ebe1;font-size:clamp(1rem,2.1vw,1.18rem);line-height:1.75}
-.status{display:inline-flex;align-items:center;gap:11px;margin-top:34px;padding:12px 19px;border:1px solid #c1e4d455;border-radius:100px;color:#f6fbf5;background:#e5fff00b;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase}
-.status i{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 5px #fa8d7820;animation:pulse 2.5s ease-in-out infinite}
-.scene{position:absolute;z-index:2;inset:0;pointer-events:none;overflow:hidden}
-.rays{position:absolute;inset:0;width:100%;height:100%;opacity:.12;filter:blur(18px)}
-.bubble{position:absolute;border:1px solid #d5f4e999;border-radius:50%;background:radial-gradient(circle at 33% 29%,#e7fff777,transparent 57%);animation:rise var(--d,12s) linear infinite;animation-delay:var(--delay,0s);left:var(--x);bottom:-30px;width:var(--s,12px);height:var(--s,12px)}
-.bubble:nth-child(2){--x:18%;--s:8px;--d:15s;--delay:-6s}.bubble:nth-child(3){--x:28%;--s:15px;--d:18s;--delay:-12s}.bubble:nth-child(4){--x:71%;--s:10px;--d:14s;--delay:-8s}.bubble:nth-child(5){--x:83%;--s:6px;--d:13s;--delay:-3s}.bubble:nth-child(6){--x:91%;--s:16px;--d:19s;--delay:-14s}.bubble:nth-child(7){--x:61%;--s:7px;--d:16s;--delay:-10s}.bubble:nth-child(8){--x:43%;--s:9px;--d:13s;--delay:-4s}
-.bubble:nth-child(9){--x:8%;--s:5px;--d:12s;--delay:-5s}.bubble:nth-child(10){--x:34%;--s:13px;--d:17s;--delay:-11s}.bubble:nth-child(11){--x:53%;--s:7px;--d:14s;--delay:-7s}.bubble:nth-child(12){--x:77%;--s:11px;--d:18s;--delay:-12s}.bubble:nth-child(13){--x:96%;--s:5px;--d:13s;--delay:-9s}.bubble:nth-child(14){--x:14%;--s:10px;--d:16s;--delay:-14s}.bubble:nth-child(15){--x:38%;--s:6px;--d:11s;--delay:-4s}.bubble:nth-child(16){--x:66%;--s:14px;--d:20s;--delay:-16s}.bubble:nth-child(17){--x:87%;--s:8px;--d:15s;--delay:-6s}.bubble:nth-child(18){--x:24%;--s:12px;--d:19s;--delay:-15s}.bubble:nth-child(19){--x:48%;--s:5px;--d:13s;--delay:-10s}.bubble:nth-child(20){--x:73%;--s:9px;--d:16s;--delay:-8s}.bubble:nth-child(21){--x:4%;--s:7px;--d:12s;--delay:-3s}.bubble:nth-child(22){--x:58%;--s:11px;--d:17s;--delay:-13s}.bubble:nth-child(23){--x:93%;--s:6px;--d:14s;--delay:-5s}.bubble:nth-child(24){--x:52%;--s:8px;--d:16s;--delay:-12s}.life{position:absolute;display:block}.screen-star{position:fixed;z-index:2;top:-110px;right:8vw;width:clamp(50px,6vw,76px);filter:drop-shadow(0 7px 0 #d56f65) drop-shadow(0 13px 12px #062b3d66);animation:star-drift 25s linear infinite;pointer-events:none}
-.fish{width:clamp(53px,8vw,92px);filter:drop-shadow(0 6px 12px #062b3d55);animation:swim 6s ease-in-out infinite}
-.fish-one{top:27%;left:12%;--flip:1}.fish-two{top:39%;right:12%;--flip:-1;animation-delay:-2s;width:clamp(42px,6vw,70px)}
-.jelly{width:74px;top:36%;right:24%;animation:bob 7s ease-in-out infinite;filter:drop-shadow(0 8px 15px #062b3d55)}.turtle{width:110px;top:25%;right:29%;animation:swim 9s ease-in-out infinite;filter:drop-shadow(0 8px 15px #062b3d55)}.ray{width:120px;top:58%;right:33%;animation:swim 8s ease-in-out infinite reverse;filter:drop-shadow(0 8px 15px #062b3d55)}.crab{width:94px;right:43%;bottom:8%;animation:bob 6s ease-in-out infinite;filter:drop-shadow(0 8px 15px #062b3d55)}.seahorse{width:80px;top:54%;left:17%;animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 8px 15px #062b3d66)}
-.star{width:82px;right:18%;bottom:12%;animation:bob 6s ease-in-out infinite reverse;filter:drop-shadow(0 8px 15px #062b3d66)}
-.coral{position:absolute;bottom:-2px;width:min(25vw,270px);height:255px;transform-origin:bottom center;animation:sway 7s ease-in-out infinite}
-.coral-left{left:4%;}.coral-right{right:4%;width:min(29vw,310px);height:280px;animation-delay:-3s}
-.seaweed{position:absolute;bottom:0;width:160px;height:350px;transform-origin:bottom center;animation:sway 5s ease-in-out infinite}
-.weed-left{left:24%;}.weed-right{right:24%;animation-delay:-2.5s}
-footer{position:absolute;bottom:22px;left:0;right:0;z-index:4;text-align:center;color:#c2e0d5a6;font-size:.7rem;letter-spacing:.1em}
-@keyframes content-float{0%,100%{translate:0 0}50%{translate:0 -9px}}
-@keyframes star-drift{0%{transform:translateY(-10vh) rotate(-12deg)}12%{transform:translateY(12vh) rotate(0deg)}48%{transform:translateY(48vh) rotate(12deg)}84%{transform:translateY(84vh) rotate(0deg)}100%{transform:translateY(112vh) rotate(-12deg)}}
-@keyframes rise{0%{transform:translate3d(0,0,0);opacity:0}10%{opacity:.7}90%{opacity:.35}100%{transform:translate3d(24px,-110vh,0);opacity:0}}
-@keyframes swim{0%,100%{transform:translate(0,0) scaleX(var(--flip,1))}50%{transform:translate(24px,-11px) scaleX(var(--flip,1))}}
-@keyframes bob{0%,100%{translate:0 0;rotate:-4deg}50%{translate:0 -14px;rotate:4deg}}
-@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(4deg)}}
-@keyframes light{to{transform:translateX(8%) translateY(3%);opacity:.34}}
-@keyframes pulse{50%{box-shadow:0 0 0 8px #fa8d780a;opacity:.65}}
-@media(max-width:650px){nav{padding:22px 22px}.nav-note{font-size:.58rem}.content{padding-top:clamp(150px,22vh,190px);padding-bottom:250px}.intro{max-width:360px}.fish-one{top:20%;left:5%}.fish-two{top:46%;right:4%}.seahorse{width:48px;top:57%;left:7%}.jelly{width:52px;top:45%;right:7%}.turtle{width:70px;top:24%;right:6%}.ray{width:83px;top:63%;right:27%}.crab{width:68px;right:43%;bottom:7%}.star{width:60px;right:8%;bottom:15%}.coral{width:35vw;height:190px}.coral-left{left:-5%}.coral-right{width:37vw;height:220px;right:-5%}.seaweed{height:260px;width:100px}.weed-left{left:22%}.weed-right{right:20%}.hero:after{height:25%}}
-@media(max-width:650px){.screen-star{right:3vw;width:48px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+html,body{margin:0;min-height:100%;background:var(--sea)}
+body{font-family:"Manrope",sans-serif;color:var(--ink)}
+.hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:#073348}
+.hero:before,.hero:after{content:"";position:absolute;inset:0;pointer-events:none}
+.hero:before{z-index:-3;background-image:url("reef-realistic-animated.png");background-size:cover;background-position:center center}
+.hero:after{z-index:-1;background:linear-gradient(90deg,#052b3b66,#052b3b40 30%,#052b3b59 72%,#052b3b66),linear-gradient(0deg,#052d3fc9 0%,#052d3f55 27%,#052d3f22 68%,#052d3f44 100%)}
+.reef-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.82) saturate(.92)}
+nav{position:absolute;z-index:4;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:28px clamp(22px,6vw,84px)}
+.wordmark{font-size:1.08rem;letter-spacing:.15em;text-transform:lowercase;font-weight:700;color:var(--ink);text-decoration:none;text-shadow:0 2px 14px #052936aa}
+.nav-note{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#d6e8df;text-shadow:0 2px 12px #052936aa}
+.content{position:relative;z-index:3;width:min(790px,90vw);min-height:100svh;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 0 150px;animation:content-float 7s ease-in-out infinite}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;color:#deeee4;font-size:.7rem;font-weight:600;letter-spacing:.27em;text-transform:uppercase;text-shadow:0 2px 14px #052936}
+.eyebrow:before,.eyebrow:after{content:"";width:28px;height:1px;background:#c4e4d7}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(3.6rem,10vw,7.6rem);line-height:.93;letter-spacing:-.045em;margin:25px 0 24px;text-shadow:0 4px 32px #042733b8}
+h1 em{font-style:normal;color:#ffd4aa}
+.intro{max-width:520px;margin:0 auto;color:#e4f0e9;font-size:clamp(1rem,2vw,1.16rem);line-height:1.75;text-shadow:0 2px 16px #042733}
+.status{display:inline-flex;align-items:center;gap:11px;margin-top:32px;padding:12px 19px;border:1px solid #e0f1e177;border-radius:100px;color:#f8fbf6;background:#d8f4e81b;box-shadow:inset 0 1px #ffffff1a,0 5px 25px #04273355;backdrop-filter:blur(8px);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
+.status i{width:8px;height:8px;border-radius:50%;background:#ffb293;box-shadow:0 0 0 5px #ffb2932a;animation:pulse 2.5s ease-in-out infinite}
+.bubbles{position:absolute;z-index:1;inset:0;overflow:hidden;pointer-events:none}
+.bubble{position:absolute;left:var(--x);bottom:-35px;width:var(--s);height:var(--s);border:1px solid #e3f5f0a6;border-radius:50%;background:radial-gradient(circle at 33% 27%,#f2ffffbf 0 9%,#c8edf255 24%,#e3ffff0c 68%);box-shadow:inset -2px -2px 4px #d4faff22,0 0 8px #bbf3f622;animation:bubble-rise var(--dur) linear var(--delay) infinite}
+footer{position:absolute;bottom:22px;left:0;right:0;z-index:3;text-align:center;color:#deebe1bf;font-size:.68rem;letter-spacing:.12em;text-shadow:0 1px 12px #041e2b}
+@keyframes content-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes bubble-rise{0%{transform:translate3d(0,0,0) scale(.8);opacity:0}12%{opacity:.7}88%{opacity:.45}100%{transform:translate3d(20px,-110vh,0) scale(1.12);opacity:0}}
+@keyframes pulse{50%{box-shadow:0 0 0 8px #ffb29310;opacity:.68}}
+@media(max-width:650px){nav{padding:22px}.nav-note{font-size:.55rem;letter-spacing:.13em}.content{width:88vw;padding:125px 0 142px}h1{font-size:clamp(3.35rem,15vw,5.2rem)}.intro{max-width:390px}.hero:before{background-position:48% center}.reef-video{object-position:48% center}footer{padding:0 18px;font-size:.6rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.reef-video{display:none}}
 </style>
 </head>
 <body>
 <main class="hero">
+<video class="reef-video" autoplay muted loop playsinline preload="metadata" poster="reef-realistic-animated.png" aria-hidden="true"><source src="https://videos.pexels.com/video-files/33028283/14078367_1920_1080_60fps.mp4" type="video/mp4"></video>
 <nav aria-label="Main navigation"><a class="wordmark" href="#" aria-label="newreef trademark home">newreef™</a><span class="nav-note">A new tide is on the way</span></nav>
-<div class="scene" aria-hidden="true">
-<svg class="rays" viewBox="0 0 1440 900" preserveAspectRatio="none"><defs><linearGradient id="ray" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d1f7df" stop-opacity=".2"/><stop offset="1" stop-color="#d1f7df" stop-opacity="0"/></linearGradient></defs><path fill="url(#ray)" d="M80 0h85L570 800H420zM390 0h66l210 710h-95zM1040 0h70L860 750h-98zM1320 0h80L1030 800h-110z"/></svg>
-<span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
-<span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><svg class="life fish fish-one" viewBox="0 0 120 70"><path fill="#ffc879" d="M22 35C42 8 80 11 99 35c-19 24-57 27-77 0Z"/><path fill="#fa8d78" d="m21 35-19-19v38z"/><path fill="#f2a958" d="M56 17 69 6l10 14zM55 53l15 12 9-15z"/><circle cx="83" cy="31" r="3" fill="#173c48"/></svg>
-<svg class="life fish fish-two" viewBox="0 0 120 70"><path fill="#93d6c2" d="M22 35C42 8 80 11 99 35c-19 24-57 27-77 0Z"/><path fill="#83b9df" d="m21 35-19-19v38z"/><path fill="#b3ead5" d="M56 17 69 6l10 14zM55 53l15 12 9-15z"/><circle cx="83" cy="31" r="3" fill="#173c48"/></svg>
-<svg class="life jelly jelly-one" viewBox="0 0 100 130"><path fill="#b8a4dc" fill-opacity=".88" d="M50 6C22 6 8 27 11 52c2 18 19 28 39 28s37-10 39-28C92 27 78 6 50 6Z"/><path d="M25 76q-13 17 0 35t-2 16m23-48q-8 18 2 30t-2 18m25-51q13 18 1 32t3 19" fill="none" stroke="#d8c8f0" stroke-width="5" stroke-linecap="round"/><circle cx="38" cy="50" r="3" fill="#274b60"/><circle cx="62" cy="50" r="3" fill="#274b60"/></svg><svg class="life turtle" viewBox="0 0 150 100"><ellipse cx="73" cy="52" rx="42" ry="30" fill="#73b79d"/><path d="M42 51q31-48 62 0-31 48-62 0Z" fill="#4c907f" stroke="#a6d5af" stroke-width="3"/><path d="m42 35-21-13-6 10 16 21m73-18 23-10 4 11-18 16M48 70 32 86l6 8 20-13m42-10 16 17 9-7-13-21" fill="#85caae"/><circle cx="125" cy="48" r="13" fill="#85caae"/><circle cx="130" cy="44" r="2" fill="#174b54"/></svg><svg class="life ray" viewBox="0 0 160 100"><path d="M12 48q68-62 136 0-68 47-136 0Zm68 0q-1 21-18 39m18-39q2 21 18 39" fill="#91cce0"/><circle cx="60" cy="42" r="2.5" fill="#164c5a"/><circle cx="100" cy="42" r="2.5" fill="#164c5a"/></svg><svg class="life seahorse" viewBox="0 0 90 170"><path fill="#f0a87a" d="M57 26c0-13-12-21-24-15-13 7-9 23 2 27 8 3 15-3 12-9-2-4-7-4-9 0-8-7-1-17 8-14 7 2 8 10 6 17l-8 24c-5 16-1 30 14 38 10 5 14 14 10 24-3 8-13 8-15 1-1-5 4-8 8-6 1-7-7-11-14-7-12 7-9 25 5 29 17 5 32-8 31-25-1-13-9-22-21-29-9-5-10-12-7-23l8-25c4-13-1-27-12-32Z"/><path fill="#d98663" d="M38 57c-16 2-24 12-19 23 4 8 13 8 17 3-11-1-8-12 4-13zM55 113c-11 6-10 18-2 21l11-8z"/><circle cx="46" cy="18" r="2.5" fill="#163f49"/></svg>
-<svg class="life crab" viewBox="0 0 120 90"><path d="M27 55q-18-11-20-28m22 25Q12 51 8 67m84-15q18-11 20-28M91 52q17-1 22 15" fill="none" stroke="#e98468" stroke-width="7" stroke-linecap="round"/><ellipse cx="60" cy="52" rx="35" ry="24" fill="#f18c72"/><path d="M37 69l-8 14m21-11-3 14m30-17 8 14m-22-12 3 15" stroke="#f18c72" stroke-width="7" stroke-linecap="round"/><circle cx="48" cy="46" r="3" fill="#184854"/><circle cx="70" cy="46" r="3" fill="#184854"/><path d="M55 56q5 5 10 0" fill="none" stroke="#a64f51" stroke-width="2"/></svg><svg class="life star" viewBox="0 0 100 100"><path fill="#fa8d78" d="m50 3 13 30 32-7-19 27 20 26-32-6-14 30-13-30-32 6 20-26L6 26l32 7z"/><circle cx="43" cy="47" r="2.3" fill="#a74c50"/><circle cx="58" cy="47" r="2.3" fill="#a74c50"/><path d="M44 57q6 6 12 0" fill="none" stroke="#a74c50" stroke-width="2" stroke-linecap="round"/></svg>
-<svg class="coral coral-left" viewBox="0 0 280 270"><g fill="none" stroke-linecap="round"><path stroke="#ed8c79" stroke-width="18" d="M40 275V155l-24-31m24 31 34-37V80m-34 75-25-19m25 64 55-42V99m-55 59-31-2M144 273V137l-22-31m22 31 26-30V68m-26 69-30-24m30 76 38-37V119m-38 33-29-1"/><path stroke="#f3b078" stroke-width="12" d="M197 275V179l28-29m-28 29-21-21m21 49 40-29v-37"/></g><g fill="#ffd891"><circle cx="16" cy="123" r="9"/><circle cx="74" cy="80" r="9"/><circle cx="99" cy="99" r="8"/><circle cx="122" cy="106" r="8"/><circle cx="170" cy="68" r="8"/><circle cx="188" cy="119" r="8"/></g><g fill="#a9d8bd"><circle cx="75" cy="118" r="5"/><circle cx="169" cy="107" r="5"/><circle cx="239" cy="151" r="5"/></g></svg>
-<svg class="coral coral-right" viewBox="0 0 310 290"><g fill="none" stroke-linecap="round"><path stroke="#df7d79" stroke-width="20" d="M62 292V161l-31-31m31 31 30-35V83m-30 78-28-16m28 74 50-44v-50m-50 56-34-2m130 113V131l-24-31m24 31 29-34V57m-29 74-31-25m31 73 47-40v-39m-47 37-28-3"/><path stroke="#ecad79" stroke-width="14" d="M249 292V187l30-29m-30 29-23-20m23 52 35-25v-29"/></g><g fill="#ffcf82"><circle cx="31" cy="130" r="9"/><circle cx="92" cy="83" r="9"/><circle cx="114" cy="108" r="8"/><circle cx="158" cy="100" r="8"/><circle cx="211" cy="57" r="8"/><circle cx="278" cy="158" r="8"/></g></svg>
-<svg class="seaweed weed-left" viewBox="0 0 160 350"><g fill="none" stroke="#70b99c" stroke-width="8" stroke-linecap="round"><path d="M75 350Q35 265 74 184T54 22"/><path d="M91 350Q133 269 94 203T128 65"/><path d="M52 350Q12 295 28 236"/></g><g fill="#83c6a5"><ellipse cx="47" cy="219" rx="9" ry="25" transform="rotate(-42 47 219)"/><ellipse cx="69" cy="160" rx="9" ry="23" transform="rotate(42 69 160)"/><ellipse cx="107" cy="226" rx="9" ry="25" transform="rotate(40 107 226)"/><ellipse cx="111" cy="137" rx="9" ry="25" transform="rotate(-42 111 137)"/><ellipse cx="29" cy="274" rx="8" ry="22" transform="rotate(-38 29 274)"/></g></svg>
-<svg class="seaweed weed-right" viewBox="0 0 160 350"><g fill="none" stroke="#599c89" stroke-width="8" stroke-linecap="round"><path d="M76 350Q116 260 83 183T112 30"/><path d="M57 350Q20 282 61 217T29 70"/><path d="M105 350Q142 292 131 233"/></g><g fill="#71b69b"><ellipse cx="99" cy="217" rx="9" ry="25" transform="rotate(42 99 217)"/><ellipse cx="80" cy="153" rx="9" ry="23" transform="rotate(-42 80 153)"/><ellipse cx="43" cy="229" rx="9" ry="25" transform="rotate(-40 43 229)"/><ellipse cx="52" cy="137" rx="9" ry="24" transform="rotate(42 52 137)"/><ellipse cx="131" cy="274" rx="8" ry="22" transform="rotate(38 131 274)"/></g></svg>
+<div class="bubbles" aria-hidden="true">
+<span class="bubble" style="--x:7%;--s:9px;--dur:15s;--delay:-7s"></span><span class="bubble" style="--x:15%;--s:14px;--dur:19s;--delay:-13s"></span><span class="bubble" style="--x:23%;--s:7px;--dur:12s;--delay:-5s"></span><span class="bubble" style="--x:34%;--s:11px;--dur:17s;--delay:-11s"></span><span class="bubble" style="--x:43%;--s:6px;--dur:14s;--delay:-9s"></span><span class="bubble" style="--x:52%;--s:13px;--dur:21s;--delay:-17s"></span><span class="bubble" style="--x:64%;--s:8px;--dur:16s;--delay:-6s"></span><span class="bubble" style="--x:72%;--s:5px;--dur:13s;--delay:-8s"></span><span class="bubble" style="--x:81%;--s:12px;--dur:19s;--delay:-15s"></span><span class="bubble" style="--x:93%;--s:8px;--dur:15s;--delay:-10s"></span><span class="bubble" style="--x:28%;--s:10px;--dur:18s;--delay:-14s"></span><span class="bubble" style="--x:58%;--s:6px;--dur:12s;--delay:-3s"></span><span class="bubble" style="--x:88%;--s:15px;--dur:22s;--delay:-18s"></span><span class="bubble" style="--x:4%;--s:5px;--dur:13s;--delay:-4s"></span><span class="bubble" style="--x:76%;--s:7px;--dur:16s;--delay:-12s"></span><span class="bubble" style="--x:48%;--s:9px;--dur:17s;--delay:-7s"></span>
 </div>
-<svg class="screen-star" aria-hidden="true" viewBox="0 0 100 100"><path fill="#ff9b81" stroke="#ffcf9e" stroke-width="2" d="m50 3 13 30 32-7-19 27 20 26-32-6-14 30-13-30-32 6 20-26L6 26l32 7z"/><path fill="none" stroke="#e98472" stroke-width="2" stroke-linecap="round" d="M36 40q-3 8 0 15m28-15q3 8 0 15m-19 8q5 4 10 0"/><circle cx="38" cy="45" r="2" fill="#6e5550"/><circle cx="62" cy="45" r="2" fill="#6e5550"/></svg><section class="content" aria-labelledby="headline"><div class="eyebrow">Ocean inspired care</div><h1 id="headline">A new tide<br>is <em>coming.</em></h1><p class="intro">Meet newreef™ — ocean inspired bath and body care is on its way.</p><div class="status"><i aria-hidden="true"></i> Coming soon</div></section>
-<footer>Made for slower moments. Coming soon at newreefskin.com</footer>
+<section class="content" aria-labelledby="headline"><div class="eyebrow">Ocean inspired care</div><h1 id="headline">A new tide<br>is <em>coming.</em></h1><p class="intro">Meet newreef™ — ocean inspired bath and body care is on its way.</p><div class="status"><i aria-hidden="true"></i> Coming soon</div></section>
+<footer>Made for slower moments · Coming soon at newreefskin.com</footer>
 </main>
 </body>
 </html>
-
-
-
