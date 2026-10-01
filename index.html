@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#082f40">
 <meta name="description" content="A new tide is coming. Discover newreef™ at newreefskin.com.">
-<title>Coming Soon | newreefskin.com</title>
+<title>Headline Arrival Concept | newreefskin.com</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
 :root{--ink:#f4f8f2;--soft:#d7e9e1;--sea:#062c3a;--peach:#ffc29b}
@@ -42,6 +42,15 @@ footer{position:absolute;bottom:22px;left:0;right:0;z-index:3;text-align:center;
 @keyframes content-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
 @keyframes bubble-rise{0%{transform:translate3d(0,0,0) scale(.8);opacity:0}12%{opacity:.7}88%{opacity:.45}100%{transform:translate3d(20px,-110vh,0) scale(1.12);opacity:0}}
 @keyframes fizz-rise{0%{transform:translate3d(0,8px,0) scale(.35);opacity:0}18%{opacity:.82}65%{transform:translate3d(var(--drift),-34px,0) scale(1);opacity:.42}100%{transform:translate3d(var(--drift),-56px,0) scale(.55);opacity:0}}
+/* A one-time title entrance synced to the opening reef footage. */
+.hero.arrival-intro.is-ready #headline{animation:title-arrival 4.4s cubic-bezier(.16,.78,.22,1) both}
+.hero.arrival-intro #headline:before{content:"";position:absolute;z-index:-1;left:50%;top:51%;width:clamp(170px,32vw,390px);aspect-ratio:1;border:1px solid #dbffff62;border-radius:50%;box-shadow:0 0 42px #8df2ee24;opacity:0;pointer-events:none}
+.hero.arrival-intro.is-ready #headline:before{animation:water-ring 1.35s ease-out 2.55s both}
+.hero.arrival-intro .eyebrow,.hero.arrival-intro .intro,.hero.arrival-intro .contact-link{opacity:0}
+.hero.arrival-intro.is-ready .eyebrow,.hero.arrival-intro.is-ready .intro,.hero.arrival-intro.is-ready .contact-link{animation:copy-surface .8s ease-out 2.75s both}
+@keyframes title-arrival{0%{opacity:0;filter:blur(5px);transform:translate3d(-120vw,10px,0) rotate(-5deg) scale(.9)}17%{opacity:0;filter:blur(5px);transform:translate3d(-120vw,10px,0) rotate(-5deg) scale(.9)}35%{opacity:.78;filter:blur(1px);transform:translate3d(-43vw,2px,0) rotate(-2.5deg) scale(.96)}59%{opacity:1;filter:blur(0);transform:translate3d(2vw,0,0) rotate(1.4deg) scale(1.035)}68%{transform:translate3d(-.9vw,0,0) rotate(-.45deg) scale(.995)}78%,100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0) rotate(0) scale(1)}}
+@keyframes water-ring{0%{opacity:0;transform:translate(-50%,-50%) scale(.25)}20%{opacity:.55}100%{opacity:0;transform:translate(-50%,-50%) scale(2.25)}}
+@keyframes copy-surface{from{opacity:0;filter:blur(3px)}to{opacity:1;filter:blur(0)}}
 @media(max-width:650px){nav{padding:22px}.nav-note{font-size:.55rem;letter-spacing:.13em}.content{width:88vw;padding:125px 0 142px}h1{font-size:clamp(2.5rem,11vw,3.8rem);line-height:.9}.intro{max-width:390px}.contact-link{gap:9px;padding:12px 14px;font-size:.69rem}.contact-email{font-size:.72rem}.hero:before{background-position:48% center}.reef-video{object-position:48% center}footer{padding:0 18px;font-size:.6rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.reef-video{display:none}}
 </style>
@@ -59,25 +68,33 @@ footer{position:absolute;bottom:22px;left:0;right:0;z-index:3;text-align:center;
 <script>
 (() => {
   const clips = [
-    "https://videos.pexels.com/video-files/35832875/15193842_1920_1080_60fps.mp4",
     "https://videos.pexels.com/video-files/11273417/11273417-hd_1920_1080_25fps.mp4",
+    "https://videos.pexels.com/video-files/35832875/15193842_1920_1080_60fps.mp4",
     "https://videos.pexels.com/video-files/35528038/15051210_3840_2160_60fps.mp4",
     "https://videos.pexels.com/video-files/33028283/14078367_1920_1080_60fps.mp4"
   ];
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   const videos = [...document.querySelectorAll(".reef-video")];
+  const hero = document.querySelector(".hero");
   if (motionPreference.matches || !videos.length) return;
 
   let active = videos[0];
   let standby = videos[1];
   let scene = 0;
   let switching = false;
+  let introStarted = false;
+
+  function revealTitle() {
+    if (introStarted) return;
+    introStarted = true;
+    hero.classList.add("arrival-intro", "is-ready");
+  }
 
   function watch(video) {
     const advance = () => {
       if (video !== active || switching || motionPreference.matches) return;
       switching = true;
-      const nextScene = (scene + 1) % clips.length;
+      const nextScene = scene === 0 || scene >= clips.length - 1 ? 1 : scene + 1;
       standby.preload = "auto";
       standby.addEventListener("canplay", function ready() {
         standby.removeEventListener("canplay", ready);
@@ -117,9 +134,11 @@ footer{position:absolute;bottom:22px;left:0;right:0;z-index:3;text-align:center;
   active.addEventListener("canplay", () => {
     active.play().then(() => {
       active.classList.add("is-active");
+      revealTitle();
       watch(active);
-    }).catch(() => {});
+    }).catch(revealTitle);
   }, { once: true });
+  active.addEventListener("error", revealTitle, { once: true });
   active.load();
 })();
 </script>
