@@ -14,39 +14,114 @@ html,body{margin:0;min-height:100%;background:var(--sea)}
 body{font-family:"Manrope",sans-serif;color:var(--ink)}
 .hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:#073348}
 .hero:before,.hero:after{content:"";position:absolute;inset:0;pointer-events:none}
-.hero:before{z-index:-3;background-image:url("reef-realistic-animated.png");background-size:cover;background-position:center center}
+.hero:before{z-index:-3;background:radial-gradient(ellipse at 48% 18%,#216b78 0%,#0c4a5d 43%,#062f42 100%)}
 .hero:after{z-index:-1;background:linear-gradient(90deg,#052b3b66,#052b3b40 30%,#052b3b59 72%,#052b3b66),linear-gradient(0deg,#052d3fc9 0%,#052d3f55 27%,#052d3f22 68%,#052d3f44 100%)}
-.reef-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.82) saturate(.92)}
+.reef-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.82) saturate(.92);opacity:0;transition:opacity 1.3s ease}
+.reef-video.is-active{opacity:1}
 nav{position:absolute;z-index:4;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:28px clamp(22px,6vw,84px)}
 .wordmark{font-size:1.08rem;letter-spacing:.15em;text-transform:lowercase;font-weight:700;color:var(--ink);text-decoration:none;text-shadow:0 2px 14px #052936aa}
 .nav-note{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#d6e8df;text-shadow:0 2px 12px #052936aa}
 .content{position:relative;z-index:3;width:min(790px,90vw);min-height:100svh;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 0 150px;animation:content-float 7s ease-in-out infinite}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;color:#deeee4;font-size:.7rem;font-weight:600;letter-spacing:.27em;text-transform:uppercase;text-shadow:0 2px 14px #052936}
 .eyebrow:before,.eyebrow:after{content:"";width:28px;height:1px;background:#c4e4d7}
-h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(3.6rem,10vw,7.6rem);line-height:.93;letter-spacing:-.045em;margin:25px 0 24px;text-shadow:0 4px 32px #042733b8}
-h1 em{font-style:normal;color:#ffd4aa}
+h1{position:relative;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(3.5rem,8vw,6.4rem);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;margin:25px 0 24px;color:#f4f8f2a6;text-shadow:0 4px 24px #04273399}
+h1 em{font-style:normal;color:#ffd4aaad}
+.title-fizz{position:absolute;z-index:2;inset:-12% -3%;pointer-events:none;overflow:visible}
+.title-fizz i{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);border:1px solid #e4fffbba;border-radius:50%;background:radial-gradient(circle at 32% 27%,#ffffffed 0 10%,#b9f5ff9c 25%,#83d8e944 72%);box-shadow:0 0 12px #a7edf677;opacity:0;animation:fizz-rise var(--time) ease-out var(--delay) infinite}
+.title-fizz i:after{content:"";position:absolute;top:18%;left:23%;width:25%;height:25%;border-radius:50%;background:#ffffffd9}
 .intro{max-width:520px;margin:0 auto;color:#e4f0e9;font-size:clamp(1rem,2vw,1.16rem);line-height:1.75;text-shadow:0 2px 16px #042733}
-.status{display:inline-flex;align-items:center;gap:11px;margin-top:32px;padding:12px 19px;border:1px solid #e0f1e177;border-radius:100px;color:#f8fbf6;background:#d8f4e81b;box-shadow:inset 0 1px #ffffff1a,0 5px 25px #04273355;backdrop-filter:blur(8px);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
-.status i{width:8px;height:8px;border-radius:50%;background:#ffb293;box-shadow:0 0 0 5px #ffb2932a;animation:pulse 2.5s ease-in-out infinite}
+.contact-link{display:inline-flex;align-items:center;gap:14px;margin-top:32px;padding:13px 19px;border:1px solid #e0f1e177;border-radius:100px;color:#f8fbf6;background:#d8f4e81b;box-shadow:inset 0 1px #ffffff1a,0 5px 25px #04273355;backdrop-filter:blur(8px);font-size:.78rem;text-decoration:none;transition:background .25s ease,border-color .25s ease,transform .25s ease}
+.contact-link:hover{background:#d8f4e833;border-color:#e0f1e1aa;transform:translateY(-2px)}
+.contact-link:focus-visible{outline:2px solid #ffd4aa;outline-offset:4px}
+.contact-label{color:#d9ebe2}
+.contact-email{font-weight:600;letter-spacing:.02em}
+.contact-arrow{color:#ffd4aa;font-size:1.1rem}
 .bubbles{position:absolute;z-index:1;inset:0;overflow:hidden;pointer-events:none}
 .bubble{position:absolute;left:var(--x);bottom:-35px;width:var(--s);height:var(--s);border:1px solid #e3f5f0a6;border-radius:50%;background:radial-gradient(circle at 33% 27%,#f2ffffbf 0 9%,#c8edf255 24%,#e3ffff0c 68%);box-shadow:inset -2px -2px 4px #d4faff22,0 0 8px #bbf3f622;animation:bubble-rise var(--dur) linear var(--delay) infinite}
 footer{position:absolute;bottom:22px;left:0;right:0;z-index:3;text-align:center;color:#deebe1bf;font-size:.68rem;letter-spacing:.12em;text-shadow:0 1px 12px #041e2b}
 @keyframes content-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
 @keyframes bubble-rise{0%{transform:translate3d(0,0,0) scale(.8);opacity:0}12%{opacity:.7}88%{opacity:.45}100%{transform:translate3d(20px,-110vh,0) scale(1.12);opacity:0}}
-@keyframes pulse{50%{box-shadow:0 0 0 8px #ffb29310;opacity:.68}}
-@media(max-width:650px){nav{padding:22px}.nav-note{font-size:.55rem;letter-spacing:.13em}.content{width:88vw;padding:125px 0 142px}h1{font-size:clamp(3.35rem,15vw,5.2rem)}.intro{max-width:390px}.hero:before{background-position:48% center}.reef-video{object-position:48% center}footer{padding:0 18px;font-size:.6rem}}
+@keyframes fizz-rise{0%{transform:translate3d(0,8px,0) scale(.35);opacity:0}18%{opacity:.82}65%{transform:translate3d(var(--drift),-34px,0) scale(1);opacity:.42}100%{transform:translate3d(var(--drift),-56px,0) scale(.55);opacity:0}}
+@media(max-width:650px){nav{padding:22px}.nav-note{font-size:.55rem;letter-spacing:.13em}.content{width:88vw;padding:125px 0 142px}h1{font-size:clamp(2.5rem,11vw,3.8rem);line-height:.9}.intro{max-width:390px}.contact-link{gap:9px;padding:12px 14px;font-size:.69rem}.contact-email{font-size:.72rem}.hero:before{background-position:48% center}.reef-video{object-position:48% center}footer{padding:0 18px;font-size:.6rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.reef-video{display:none}}
 </style>
 </head>
 <body>
 <main class="hero">
-<video class="reef-video" autoplay muted loop playsinline preload="metadata" poster="reef-realistic-animated.png" aria-hidden="true"><source src="https://videos.pexels.com/video-files/33028283/14078367_1920_1080_60fps.mp4" type="video/mp4"></video>
+<video class="reef-video" muted playsinline preload="auto" aria-hidden="true"></video><video class="reef-video" muted playsinline preload="none" aria-hidden="true"></video>
 <nav aria-label="Main navigation"><a class="wordmark" href="#" aria-label="newreef trademark home">newreef™</a><span class="nav-note">A new tide is on the way</span></nav>
 <div class="bubbles" aria-hidden="true">
 <span class="bubble" style="--x:7%;--s:9px;--dur:15s;--delay:-7s"></span><span class="bubble" style="--x:15%;--s:14px;--dur:19s;--delay:-13s"></span><span class="bubble" style="--x:23%;--s:7px;--dur:12s;--delay:-5s"></span><span class="bubble" style="--x:34%;--s:11px;--dur:17s;--delay:-11s"></span><span class="bubble" style="--x:43%;--s:6px;--dur:14s;--delay:-9s"></span><span class="bubble" style="--x:52%;--s:13px;--dur:21s;--delay:-17s"></span><span class="bubble" style="--x:64%;--s:8px;--dur:16s;--delay:-6s"></span><span class="bubble" style="--x:72%;--s:5px;--dur:13s;--delay:-8s"></span><span class="bubble" style="--x:81%;--s:12px;--dur:19s;--delay:-15s"></span><span class="bubble" style="--x:93%;--s:8px;--dur:15s;--delay:-10s"></span><span class="bubble" style="--x:28%;--s:10px;--dur:18s;--delay:-14s"></span><span class="bubble" style="--x:58%;--s:6px;--dur:12s;--delay:-3s"></span><span class="bubble" style="--x:88%;--s:15px;--dur:22s;--delay:-18s"></span><span class="bubble" style="--x:4%;--s:5px;--dur:13s;--delay:-4s"></span><span class="bubble" style="--x:76%;--s:7px;--dur:16s;--delay:-12s"></span><span class="bubble" style="--x:48%;--s:9px;--dur:17s;--delay:-7s"></span>
 </div>
-<section class="content" aria-labelledby="headline"><div class="eyebrow">Ocean inspired care</div><h1 id="headline">A new tide<br>is <em>coming.</em></h1><p class="intro">Meet newreef™ — ocean inspired bath and body care is on its way.</p><div class="status"><i aria-hidden="true"></i> Coming soon</div></section>
+<section class="content" aria-labelledby="headline"><div class="eyebrow">Ocean inspired bath &amp; body</div><h1 id="headline">Coming<br><em>soon.</em><span class="title-fizz" aria-hidden="true"><i style="--x:7%;--y:67%;--size:9px;--time:3.4s;--delay:-1.8s;--drift:-7px"></i><i style="--x:18%;--y:39%;--size:6px;--time:2.8s;--delay:-.6s;--drift:5px"></i><i style="--x:29%;--y:76%;--size:11px;--time:3.8s;--delay:-2.5s;--drift:-4px"></i><i style="--x:40%;--y:23%;--size:7px;--time:3s;--delay:-1.1s;--drift:7px"></i><i style="--x:51%;--y:63%;--size:8px;--time:3.5s;--delay:-2.2s;--drift:-6px"></i><i style="--x:62%;--y:36%;--size:12px;--time:4s;--delay:-.9s;--drift:5px"></i><i style="--x:72%;--y:79%;--size:6px;--time:2.9s;--delay:-1.5s;--drift:-5px"></i><i style="--x:82%;--y:19%;--size:9px;--time:3.7s;--delay:-2.7s;--drift:6px"></i><i style="--x:92%;--y:56%;--size:7px;--time:3.2s;--delay:-.4s;--drift:-4px"></i><i style="--x:46%;--y:88%;--size:5px;--time:2.7s;--delay:-2.1s;--drift:5px"></i></span></h1><p class="intro">Meet newreef™ — a new tide in bath and body care is on the way.</p><a class="contact-link" href="mailto:contact@newreefskin.com"><span class="contact-label">Questions?</span><span class="contact-email">contact@newreefskin.com</span><span class="contact-arrow" aria-hidden="true">↗</span></a></section>
 <footer>Made for slower moments · Coming soon at newreefskin.com</footer>
 </main>
+<script>
+(() => {
+  const clips = [
+    "https://videos.pexels.com/video-files/35832875/15193842_1920_1080_60fps.mp4",
+    "https://videos.pexels.com/video-files/11273417/11273417-hd_1920_1080_25fps.mp4",
+    "https://videos.pexels.com/video-files/35528038/15051210_3840_2160_60fps.mp4",
+    "https://videos.pexels.com/video-files/33028283/14078367_1920_1080_60fps.mp4"
+  ];
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const videos = [...document.querySelectorAll(".reef-video")];
+  if (motionPreference.matches || !videos.length) return;
+
+  let active = videos[0];
+  let standby = videos[1];
+  let scene = 0;
+  let switching = false;
+
+  function watch(video) {
+    const advance = () => {
+      if (video !== active || switching || motionPreference.matches) return;
+      switching = true;
+      const nextScene = (scene + 1) % clips.length;
+      standby.preload = "auto";
+      standby.addEventListener("canplay", function ready() {
+        standby.removeEventListener("canplay", ready);
+        standby.play().then(() => {
+          const outgoing = active;
+          active = standby;
+          standby = outgoing;
+          scene = nextScene;
+          active.classList.add("is-active");
+          outgoing.classList.remove("is-active");
+          window.setTimeout(() => {
+            outgoing.pause();
+            outgoing.removeAttribute("src");
+            outgoing.load();
+            outgoing.preload = "none";
+          }, 1400);
+          switching = false;
+          watch(active);
+        }).catch(() => { switching = false; });
+      }, { once: true });
+      standby.addEventListener("error", () => { switching = false; }, { once: true });
+      standby.src = clips[nextScene];
+      standby.load();
+    };
+
+    video.addEventListener("timeupdate", function nearEnd() {
+      if (Number.isFinite(video.duration) && video.currentTime >= video.duration - 1.2) {
+        video.removeEventListener("timeupdate", nearEnd);
+        advance();
+      }
+    });
+    video.addEventListener("ended", advance, { once: true });
+  }
+
+  active.src = clips[scene];
+  active.preload = "auto";
+  active.addEventListener("canplay", () => {
+    active.play().then(() => {
+      active.classList.add("is-active");
+      watch(active);
+    }).catch(() => {});
+  }, { once: true });
+  active.load();
+})();
+</script>
 </body>
 </html>
